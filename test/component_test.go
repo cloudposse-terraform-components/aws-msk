@@ -9,6 +9,7 @@ import (
 	"github.com/cloudposse/test-helpers/pkg/atmos"
 	helper "github.com/cloudposse/test-helpers/pkg/atmos/aws-component-helper"
 	"github.com/gruntwork-io/terratest/modules/aws"
+	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -60,7 +61,10 @@ func TestComponent(t *testing.T) {
 
 		// Test phase: Validate the functionality of the ALB component
 		suite.Test(t, "basic", func(t *testing.T, atm *helper.Atmos) {
-			inputs := map[string]interface{}{}
+			suffix := strings.ToLower(random.UniqueId())
+			inputs := map[string]interface{}{
+				"name": "msk-" + suffix,
+			}
 
 			defer atm.GetAndDestroy("msk/basic", "default-test", inputs)
 			component := atm.GetAndDeploy("msk/basic", "default-test", inputs)
