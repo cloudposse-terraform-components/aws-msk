@@ -103,10 +103,12 @@ func TestComponent(t *testing.T) {
 			assert.Equal(t, "", bootstrapBrokersPublicSaslIam)
 
 			zookeeperConnectString := atm.Output(component, "zookeeper_connect_string")
-			assert.Equal(t, 3, len(strings.Split(zookeeperConnectString, ",")))
+			zookeeperConnectStringList := strings.Split(zookeeperConnectString, ",")
+			assert.Equal(t, 3, len(zookeeperConnectStringList))
 
 			zookeeperConnectStringTLS := atm.Output(component, "zookeeper_connect_string_tls")
-			assert.Equal(t, 3, len(strings.Split(zookeeperConnectStringTLS, ",")))
+			zookeeperConnectStringTLSList := strings.Split(zookeeperConnectStringTLS, ",")
+			assert.Equal(t, 3, len(zookeeperConnectStringTLSList))
 
 			brokerEndpoints := atm.OutputList(component, "broker_endpoints")
 			assert.Equal(t, 2, len(brokerEndpoints))
@@ -156,8 +158,8 @@ func TestComponent(t *testing.T) {
 			assert.Nil(t, awsBootstrapBrokers.BootstrapBrokerStringSaslScram)
 			assert.Nil(t, awsBootstrapBrokers.BootstrapBrokerStringPublicSaslScram)
 
-			assert.EqualValues(t, zookeeperConnectString, *cluster.ZookeeperConnectString)
-			assert.EqualValues(t, zookeeperConnectStringTLS, *cluster.ZookeeperConnectStringTls)
+			assert.ElementsMatch(t, zookeeperConnectStringList, strings.Split(*cluster.ZookeeperConnectString, ","))
+			assert.ElementsMatch(t, zookeeperConnectStringTLSList, strings.Split(*cluster.ZookeeperConnectStringTls, ","))
 
 			// assert.EqualValues(t, brokerEndpoints, cluster.BrokerNodeGroupInfo.BrokerEndpoints)
 			assert.EqualValues(t, currentVersion, *cluster.CurrentVersion)
