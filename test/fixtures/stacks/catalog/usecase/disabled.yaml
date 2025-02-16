@@ -1,10 +1,10 @@
 components:
   terraform:
-    msk/basic:
+    msk/disabled:
       metadata:
         component: target
       vars:
-        enabled: true
+        enabled: false
         name: "msk"
         vpc_component_name: "vpc"
         dns_delegated_component_name: "dns-delegated"
