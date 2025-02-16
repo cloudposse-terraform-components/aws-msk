@@ -8,6 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/kafka"
 	"github.com/cloudposse/test-helpers/pkg/atmos"
 	helper "github.com/cloudposse/test-helpers/pkg/atmos/component-helper"
+	awshelper "github.com/cloudposse/test-helpers/pkg/aws"
 	"github.com/gruntwork-io/terratest/modules/aws"
 	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/stretchr/testify/assert"
@@ -55,7 +56,7 @@ func (s *ComponentSuite) TestBasic() {
 	// Additional assertions for SASL and Zookeeper
 	// ...
 
-	client := NewMSKClient(s.T(), awsRegion)
+	client := awshelper.NewMSKClient(s.T(), awsRegion)
 	describeClusterOutput, err := client.DescribeCluster(context.Background(), &kafka.DescribeClusterInput{
 		ClusterArn: &clusterArn,
 	})
