@@ -1,0 +1,56 @@
+components:
+  terraform:
+    msk/disabled:
+      metadata:
+        component: target
+      vars:
+        enabled: false
+        name: "msk"
+        vpc_component_name: "vpc"
+        dns_delegated_component_name: "dns-delegated"
+        dns_delegated_environment_name: "ue2"
+        # https://docs.aws.amazon.com/msk/latest/developerguide/supported-kafka-versions.html
+        kafka_version: "3.4.0"
+        public_access_enabled: false
+        # https://aws.amazon.com/msk/pricing/
+        broker_instance_type: "kafka.t3.small"
+        # Number of brokers per AZ
+        broker_per_zone: 1
+        #  `broker_dns_records_count` specifies how many DNS records to create for the broker endpoints in the DNS zone provided in the `zone_id` variable.
+        #  This corresponds to the total number of broker endpoints created by the module.
+        #  Calculate this number by multiplying the `broker_per_zone` variable by the subnet count.
+        broker_dns_records_count: 2
+        broker_volume_size: 1
+        client_broker: "TLS_PLAINTEXT"
+        encryption_in_cluster: true
+        encryption_at_rest_kms_key_arn: ""
+        enhanced_monitoring: "DEFAULT"
+        certificate_authority_arns: []
+
+        # Authentication methods
+        client_allow_unauthenticated: true
+        client_sasl_scram_enabled: false
+        client_sasl_scram_secret_association_enabled: false
+        client_sasl_scram_secret_association_arns: []
+        client_sasl_iam_enabled: false
+        client_tls_auth_enabled: false
+
+        jmx_exporter_enabled: false
+        node_exporter_enabled: false
+        cloudwatch_logs_enabled: false
+        firehose_logs_enabled: false
+        firehose_delivery_stream: ""
+        s3_logs_enabled: false
+        s3_logs_bucket: ""
+        s3_logs_prefix: ""
+        properties: {}
+        autoscaling_enabled: false
+        storage_autoscaling_target_value: 1
+        storage_autoscaling_max_capacity: null
+        storage_autoscaling_disable_scale_in: false
+        create_security_group: true
+        security_group_rule_description: "Allow inbound %s traffic"
+        # A list of IDs of Security Groups to allow access to the cluster security group
+        allowed_security_group_ids: []
+        # A list of IPv4 CIDRs to allow access to the cluster security group
+        allowed_cidr_blocks: []
