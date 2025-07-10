@@ -73,7 +73,7 @@ module "parameter_store_write" {
   source  = "cloudposse/ssm-parameter-store/aws"
   version = "0.13.0"
 
-  count = var.ssm_parameters_enabled ? 1 : 0
+  count = var.ssm_parameters_enabled && local.enabled ? 1 : 0
 
   parameter_write = local.kafka_parameters
 
