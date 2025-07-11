@@ -75,7 +75,7 @@ module "parameter_store_write" {
 
   count = var.ssm_parameters_enabled && local.enabled ? 1 : 0
 
-  parameter_write = local.kafka_parameters
+  parameter_write = var.ssm_parameters_enabled && local.enabled ? local.kafka_parameters : []
 
   context = module.this.context
 }

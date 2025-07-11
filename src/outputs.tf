@@ -97,3 +97,8 @@ output "security_group_name" {
   value       = module.kafka.security_group_name
   description = "The name of the created security group"
 }
+output "ssm_key_paths" {
+  value       = module.parameter_store_write.names
+  description = "Names (key paths) of all SSM parameters stored for this msk cluster"
+}
+
