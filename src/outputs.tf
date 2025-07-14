@@ -99,7 +99,7 @@ output "security_group_name" {
 }
 
 output "ssm_key_paths" {
-  value       = one(module.parameter_store_write[*].names)
+  value       = var.ssm_parameters_enabled ? one(module.parameter_store_write[*].names) : null
   description = "Names (key paths) of all SSM parameters stored for this msk cluster"
 }
 
