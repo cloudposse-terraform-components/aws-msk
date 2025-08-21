@@ -2,8 +2,11 @@
 
 <!-- markdownlint-disable -->
 <a href="https://cpco.io/homepage"><img src="https://github.com/cloudposse-terraform-components/aws-msk/blob/main/.github/banner.png?raw=true" alt="Project Banner"/></a><br/>
-    <p align="right">
-<a href="https://github.com/cloudposse-terraform-components/aws-msk/releases/latest"><img src="https://img.shields.io/github/release/cloudposse-terraform-components/aws-msk.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://slack.cloudposse.com"><img src="https://slack.cloudposse.com/for-the-badge.svg" alt="Slack Community"/></a></p>
+
+
+<p align="right"><a href="https://github.com/cloudposse-terraform-components/aws-msk/releases/latest"><img src="https://img.shields.io/github/release/cloudposse-terraform-components/aws-msk.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://slack.cloudposse.com"><img src="https://slack.cloudposse.com/for-the-badge.svg" alt="Slack Community"/></a><a href="https://cloudposse.com/support/"><img src="https://img.shields.io/badge/Get_Support-success.svg?style=for-the-badge" alt="Get Support"/></a>
+
+</p>
 <!-- markdownlint-restore -->
 
 <!--
@@ -29,6 +32,22 @@
 
 This component is responsible for provisioning [Amazon Managed Streaming](https://aws.amazon.com/msk/) clusters for
 [Apache Kafka](https://aws.amazon.com/msk/what-is-kafka/).
+
+
+> [!TIP]
+> #### 👽 Use Atmos with Terraform
+> Cloud Posse uses [`atmos`](https://atmos.tools) to easily orchestrate multiple environments using Terraform. <br/>
+> Works with [Github Actions](https://atmos.tools/integrations/github-actions/), [Atlantis](https://atmos.tools/integrations/atlantis), or [Spacelift](https://atmos.tools/integrations/spacelift).
+>
+> <details>
+> <summary><strong>Watch demo of using Atmos with Terraform</strong></summary>
+> <img src="https://github.com/cloudposse/atmos/blob/main/docs/demo.gif?raw=true"/><br/>
+> <i>Example of running <a href="https://atmos.tools"><code>atmos</code></a> to manage infrastructure from our <a href="https://atmos.tools/quick-start/">Quick Start</a> tutorial.</i>
+> </details>
+
+
+
+
 
 ## Usage
 
@@ -96,7 +115,22 @@ components:
 ```
 
 <!-- prettier-ignore-start -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- prettier-ignore-end -->
+
+> [!IMPORTANT]
+> In Cloud Posse's examples, we avoid pinning modules to specific versions to prevent discrepancies between the documentation
+> and the latest released versions. However, for your own projects, we strongly advise pinning each module to the exact version
+> you're using. This practice ensures the stability of your infrastructure. Additionally, we recommend implementing a systematic
+> approach for updating versions to avoid unexpected changes.
+
+
+
+
+
+
+
+
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -219,44 +253,7 @@ No resources.
 | <a name="output_storage_mode"></a> [storage\_mode](#output\_storage\_mode) | Storage mode for supported storage tiers |
 | <a name="output_zookeeper_connect_string"></a> [zookeeper\_connect\_string](#output\_zookeeper\_connect\_string) | Comma separated list of one or more hostname:port pairs to connect to the Apache Zookeeper cluster |
 | <a name="output_zookeeper_connect_string_tls"></a> [zookeeper\_connect\_string\_tls](#output\_zookeeper\_connect\_string\_tls) | Comma separated list of one or more hostname:port pairs to connect to the Apache Zookeeper cluster via TLS |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- prettier-ignore-end -->
-
-## References
-
-- https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster
-- https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_serverless_cluster
-- https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/
-- https://docs.aws.amazon.com/msk/latest/developerguide/security-iam.html
-- https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html
-- https://docs.aws.amazon.com/msk/latest/developerguide/kafka_apis_iam.html
-- https://github.com/aws/aws-msk-iam-auth
-- https://www.cloudthat.com/resources/blog/a-guide-to-create-aws-msk-cluster-with-iam-based-authentication
-- https://blog.devops.dev/how-to-use-iam-auth-with-aws-msk-a-step-by-step-guide-2023-eb8291781fcb
-- https://www.kai-waehner.de/blog/2022/08/30/when-not-to-choose-amazon-msk-serverless-for-apache-kafka/
-- https://stackoverflow.com/questions/72508438/connect-python-to-msk-with-iam-role-based-authentication
-- https://github.com/aws/aws-msk-iam-auth/issues/10
-- https://aws.amazon.com/msk/faqs/
-- https://aws.amazon.com/blogs/big-data/secure-connectivity-patterns-to-access-amazon-msk-across-aws-regions/
-- https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html
-- https://repost.aws/knowledge-center/msk-broker-custom-ports
-
-
-> [!TIP]
-> #### 👽 Use Atmos with Terraform
-> Cloud Posse uses [`atmos`](https://atmos.tools) to easily orchestrate multiple environments using Terraform. <br/>
-> Works with [Github Actions](https://atmos.tools/integrations/github-actions/), [Atlantis](https://atmos.tools/integrations/atlantis), or [Spacelift](https://atmos.tools/integrations/spacelift).
->
-> <details>
-> <summary><strong>Watch demo of using Atmos with Terraform</strong></summary>
-> <img src="https://github.com/cloudposse/atmos/blob/main/docs/demo.gif?raw=true"/><br/>
-> <i>Example of running <a href="https://atmos.tools"><code>atmos</code></a> to manage infrastructure from our <a href="https://atmos.tools/quick-start/">Quick Start</a> tutorial.</i>
-> </details>
-
-
-
-
-
+<!-- markdownlint-restore -->
 
 
 
@@ -269,6 +266,29 @@ Check out these related projects.
 
 - [Cloud Posse Terraform Modules](https://docs.cloudposse.com/modules/) - Our collection of reusable Terraform modules used by our reference architectures.
 - [Atmos](https://atmos.tools) - Atmos is like docker-compose but for your infrastructure
+
+
+## References
+
+For additional context, refer to some of these links.
+
+- [https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster) - 
+- [https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_serverless_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_serverless_cluster) - 
+- [https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/](https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/) - 
+- [https://docs.aws.amazon.com/msk/latest/developerguide/security-iam.html](https://docs.aws.amazon.com/msk/latest/developerguide/security-iam.html) - 
+- [https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html](https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html) - 
+- [https://docs.aws.amazon.com/msk/latest/developerguide/kafka_apis_iam.html](https://docs.aws.amazon.com/msk/latest/developerguide/kafka_apis_iam.html) - 
+- [https://github.com/aws/aws-msk-iam-auth](https://github.com/aws/aws-msk-iam-auth) - 
+- [https://www.cloudthat.com/resources/blog/a-guide-to-create-aws-msk-cluster-with-iam-based-authentication](https://www.cloudthat.com/resources/blog/a-guide-to-create-aws-msk-cluster-with-iam-based-authentication) - 
+- [https://blog.devops.dev/how-to-use-iam-auth-with-aws-msk-a-step-by-step-guide-2023-eb8291781fcb](https://blog.devops.dev/how-to-use-iam-auth-with-aws-msk-a-step-by-step-guide-2023-eb8291781fcb) - 
+- [https://www.kai-waehner.de/blog/2022/08/30/when-not-to-choose-amazon-msk-serverless-for-apache-kafka/](https://www.kai-waehner.de/blog/2022/08/30/when-not-to-choose-amazon-msk-serverless-for-apache-kafka/) - 
+- [https://stackoverflow.com/questions/72508438/connect-python-to-msk-with-iam-role-based-authentication](https://stackoverflow.com/questions/72508438/connect-python-to-msk-with-iam-role-based-authentication) - 
+- [https://github.com/aws/aws-msk-iam-auth/issues/10](https://github.com/aws/aws-msk-iam-auth/issues/10) - 
+- [https://aws.amazon.com/msk/faqs/](https://aws.amazon.com/msk/faqs/) - 
+- [https://aws.amazon.com/blogs/big-data/secure-connectivity-patterns-to-access-amazon-msk-across-aws-regions/](https://aws.amazon.com/blogs/big-data/secure-connectivity-patterns-to-access-amazon-msk-across-aws-regions/) - 
+- [https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html](https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html) - 
+- [https://repost.aws/knowledge-center/msk-broker-custom-ports](https://repost.aws/knowledge-center/msk-broker-custom-ports) - 
+
 
 
 > [!TIP]
@@ -334,6 +354,38 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
  6. Submit a **Pull Request** so that we can review your changes
 
 **NOTE:** Be sure to merge the latest changes from "upstream" before making a pull request!
+
+
+## Running Terraform Tests
+
+We use [Atmos](https://atmos.tools) to streamline how Terraform tests are run. It centralizes configuration and wraps common test workflows with easy-to-use commands.
+
+All tests are located in the [`test/`](test) folder.
+
+Under the hood, tests are powered by Terratest together with our internal [Test Helpers](https://github.com/cloudposse/test-helpers) library, providing robust infrastructure validation.
+
+Setup dependencies:
+- Install Atmos ([installation guide](https://atmos.tools/install/))
+- Install Go [1.24+ or newer](https://go.dev/doc/install)
+- Install Terraform or OpenTofu
+
+To run tests:
+
+- Run all tests:  
+  ```sh
+  atmos test run
+  ```
+- Clean up test artifacts:  
+  ```sh
+  atmos test clean
+  ```
+- Explore additional test options:  
+  ```sh
+  atmos test --help
+  ```
+The configuration for test commands is centrally managed. To review what's being imported, see the [`atmos.yaml`](https://raw.githubusercontent.com/cloudposse/.github/refs/heads/main/.github/atmos/terraform-module.yaml) file.
+
+Learn more about our [automated testing in our documentation](https://docs.cloudposse.com/community/contribute/automated-testing/) or implementing [custom commands](https://atmos.tools/core-concepts/custom-commands/) with atmos.
 
 ### 🌎 Slack Community
 
