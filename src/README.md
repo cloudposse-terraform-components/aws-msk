@@ -9,7 +9,6 @@ tags:
 
 This component is responsible for provisioning [Amazon Managed Streaming](https://aws.amazon.com/msk/) clusters for
 [Apache Kafka](https://aws.amazon.com/msk/what-is-kafka/).
-
 ## Usage
 
 **Stack Level**: Regional
@@ -76,7 +75,10 @@ components:
 ```
 
 <!-- prettier-ignore-start -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- prettier-ignore-end -->
+
+
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -199,26 +201,47 @@ No resources.
 | <a name="output_storage_mode"></a> [storage\_mode](#output\_storage\_mode) | Storage mode for supported storage tiers |
 | <a name="output_zookeeper_connect_string"></a> [zookeeper\_connect\_string](#output\_zookeeper\_connect\_string) | Comma separated list of one or more hostname:port pairs to connect to the Apache Zookeeper cluster |
 | <a name="output_zookeeper_connect_string_tls"></a> [zookeeper\_connect\_string\_tls](#output\_zookeeper\_connect\_string\_tls) | Comma separated list of one or more hostname:port pairs to connect to the Apache Zookeeper cluster via TLS |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- prettier-ignore-end -->
+<!-- markdownlint-restore -->
+
+
 
 ## References
 
-- https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster
-- https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_serverless_cluster
-- https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/
-- https://docs.aws.amazon.com/msk/latest/developerguide/security-iam.html
-- https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html
-- https://docs.aws.amazon.com/msk/latest/developerguide/kafka_apis_iam.html
-- https://github.com/aws/aws-msk-iam-auth
-- https://www.cloudthat.com/resources/blog/a-guide-to-create-aws-msk-cluster-with-iam-based-authentication
-- https://blog.devops.dev/how-to-use-iam-auth-with-aws-msk-a-step-by-step-guide-2023-eb8291781fcb
-- https://www.kai-waehner.de/blog/2022/08/30/when-not-to-choose-amazon-msk-serverless-for-apache-kafka/
-- https://stackoverflow.com/questions/72508438/connect-python-to-msk-with-iam-role-based-authentication
-- https://github.com/aws/aws-msk-iam-auth/issues/10
-- https://aws.amazon.com/msk/faqs/
-- https://aws.amazon.com/blogs/big-data/secure-connectivity-patterns-to-access-amazon-msk-across-aws-regions/
-- https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html
-- https://repost.aws/knowledge-center/msk-broker-custom-ports
+
+- [https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_cluster) - 
+
+- [https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_serverless_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/msk_serverless_cluster) - 
+
+- [https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/](https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/) - 
+
+- [https://docs.aws.amazon.com/msk/latest/developerguide/security-iam.html](https://docs.aws.amazon.com/msk/latest/developerguide/security-iam.html) - 
+
+- [https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html](https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html) - 
+
+- [https://docs.aws.amazon.com/msk/latest/developerguide/kafka_apis_iam.html](https://docs.aws.amazon.com/msk/latest/developerguide/kafka_apis_iam.html) - 
+
+- [https://github.com/aws/aws-msk-iam-auth](https://github.com/aws/aws-msk-iam-auth) - 
+
+- [https://www.cloudthat.com/resources/blog/a-guide-to-create-aws-msk-cluster-with-iam-based-authentication](https://www.cloudthat.com/resources/blog/a-guide-to-create-aws-msk-cluster-with-iam-based-authentication) - 
+
+- [https://blog.devops.dev/how-to-use-iam-auth-with-aws-msk-a-step-by-step-guide-2023-eb8291781fcb](https://blog.devops.dev/how-to-use-iam-auth-with-aws-msk-a-step-by-step-guide-2023-eb8291781fcb) - 
+
+- [https://www.kai-waehner.de/blog/2022/08/30/when-not-to-choose-amazon-msk-serverless-for-apache-kafka/](https://www.kai-waehner.de/blog/2022/08/30/when-not-to-choose-amazon-msk-serverless-for-apache-kafka/) - 
+
+- [https://stackoverflow.com/questions/72508438/connect-python-to-msk-with-iam-role-based-authentication](https://stackoverflow.com/questions/72508438/connect-python-to-msk-with-iam-role-based-authentication) - 
+
+- [https://github.com/aws/aws-msk-iam-auth/issues/10](https://github.com/aws/aws-msk-iam-auth/issues/10) - 
+
+- [https://aws.amazon.com/msk/faqs/](https://aws.amazon.com/msk/faqs/) - 
+
+- [https://aws.amazon.com/blogs/big-data/secure-connectivity-patterns-to-access-amazon-msk-across-aws-regions/](https://aws.amazon.com/blogs/big-data/secure-connectivity-patterns-to-access-amazon-msk-across-aws-regions/) - 
+
+- [https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html](https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html) - 
+
+- [https://repost.aws/knowledge-center/msk-broker-custom-ports](https://repost.aws/knowledge-center/msk-broker-custom-ports) - 
+
+
+
 
 [<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-msk&utm_content=)
+
