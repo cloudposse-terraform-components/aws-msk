@@ -24,7 +24,7 @@ func (s *ComponentSuite) TestBasic() {
 	const awsRegion = "us-east-2"
 
 	suffix := strings.ToLower(random.UniqueId())
-	inputs := map[string]interface{}{
+	inputs := map[string]any{
 		"name": "msk-" + suffix,
 	}
 
@@ -55,6 +55,9 @@ func (s *ComponentSuite) TestBasic() {
 	// Additional assertions for SASL and Zookeeper
 	// ...
 
+	ssmKeyPaths := atmos.OutputList(s.T(), options, "ssm_key_paths")
+	assert.Equal(s.T(), 5, len(ssmKeyPaths))
+
 	client := awshelper.NewMSKClient(s.T(), awsRegion)
 	describeClusterOutput, err := client.DescribeCluster(context.Background(), &kafka.DescribeClusterInput{
 		ClusterArn: &clusterArn,
@@ -76,7 +79,7 @@ func (s *ComponentSuite) TestEnabledFlag() {
 	const awsRegion = "us-east-2"
 
 	suffix := strings.ToLower(random.UniqueId())
-	inputs := map[string]interface{}{
+	inputs := map[string]any{
 		"name": "msk-" + suffix,
 	}
 
@@ -89,8 +92,8 @@ func TestRunSuite(t *testing.T) {
 	suite.AddDependency(t, "vpc", "default-test", nil)
 
 	subdomain := strings.ToLower(random.UniqueId())
-	inputs := map[string]interface{}{
-		"zone_config": []map[string]interface{}{
+	inputs := map[string]any{
+		"zone_config": []map[string]any{
 			{
 				"subdomain": subdomain,
 				"zone_name": "components.cptest.test-automation.app",
@@ -100,4 +103,3 @@ func TestRunSuite(t *testing.T) {
 	suite.AddDependency(t, "dns-delegated", "default-test", &inputs)
 	helper.Run(t, suite)
 }
-

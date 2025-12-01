@@ -54,3 +54,5 @@ components:
         allowed_security_group_ids: []
         # A list of IPv4 CIDRs to allow access to the cluster security group
         allowed_cidr_blocks: []
+        # Write connection strings to SSM
+        ssm_parameters_enabled: true
