@@ -5,7 +5,7 @@ locals {
 
 module "kafka" {
   source  = "cloudposse/msk-apache-kafka-cluster/aws"
-  version = "2.5.0"
+  version = "2.6.0"
 
   # VPC and subnets
   vpc_id     = local.vpc_outputs.vpc_id
