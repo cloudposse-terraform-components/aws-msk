@@ -254,3 +254,21 @@ variable "custom_broker_dns_name" {
   description = "Custom Route53 DNS hostname for MSK brokers. Use `%%ID%%` key to specify brokers index in the hostname. Example: `kafka-broker%%ID%%.example.com`"
   default     = null
 }
+
+variable "ssm_parameters_enabled" {
+  type        = bool
+  description = "Whether to write SSM parameters for the MSK cluster connection details."
+  default     = false
+}
+
+variable "ssm_path_prefix" {
+  type        = string
+  default     = "msk"
+  description = "Top level SSM path prefix (without leading or trailing slash)."
+}
+
+variable "ssm_cluster_name_override" {
+  type        = string
+  default     = ""
+  description = "Set a cluster name into the ssm path prefix."
+}
