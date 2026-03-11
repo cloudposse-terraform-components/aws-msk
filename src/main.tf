@@ -1,5 +1,4 @@
 locals {
-  enabled     = module.this.enabled
   vpc_outputs = module.vpc.outputs
 }
 
